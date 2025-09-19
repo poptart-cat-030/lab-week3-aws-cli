@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 ssh-keygen -t rsa -C "bcitkey" -f ~/.ssh/bcitkey
 
 aws ec2 import-key-pair --key-name "bcitkey" --public-key-material fileb://~/.ssh/bcitkey.pub --region us-west-2
