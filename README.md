@@ -1,2 +1,5 @@
-# lab-week3-aws-cli
-ACIT 4640 - Lab for Week 3
+# 4640-w3-lab-start-w25
+
+Starting script files for the week 3 lab.
+
+See D2L for lab instructions
