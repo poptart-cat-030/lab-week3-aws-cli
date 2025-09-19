@@ -41,8 +41,14 @@ aws ec2 wait instance-running --instance-ids $instance_id
 
 # Get the public IP address of the EC2 instance
 # COMPLETE THIS PART
-public_ip=
+resource_id=$(aws ec2 describe-ipam-resource-discoveries \
+    --region us-west-2)
+
+public_ip=$(aws ec2 get-ipam-discovered-public-addresses \
+    --ipam-resource-discovery-id $resource_id \
+    --address-region us-west-2 \
+    --region us-west-2)
 
 # Write instance data to a file
 # COMPLETE THIS PART
-echo "Public IP: $public_ip" 
+echo "Public IP: $public_ip" > instance_data.txt
